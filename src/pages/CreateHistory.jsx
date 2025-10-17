@@ -20,7 +20,7 @@ const CreateHistory = () => {
   const handleRestart = () => setGeneratedStory('');
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-start p-4 sm:p-8">
+    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-start p-4 sm:p-8" >
       {!generatedStory ? (
         <StoryForm onSubmit={handleFormSubmit} />
       ) : (

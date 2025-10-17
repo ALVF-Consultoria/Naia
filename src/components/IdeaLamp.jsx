@@ -37,11 +37,12 @@ Respond briefly to help with story creation.`;
         animate={{ y: [0, -6, 0], rotate: [0, 10, -10, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
         whileHover={{ scale: 1.2, boxShadow: "0px 0px 20px rgba(59, 130, 246, 0.6)" }}
-        className={`bg-yellow-400 p-4 rounded-full shadow-lg relative z-10 ${
+        className={`p-4 rounded-full shadow-lg relative z-10 ${
           isOpen ? "shadow-[0_0_20px_#3b82f6]" : ""
         }`}
       >
-        <Lamp size={24} className={`${isOpen ? "text-blue-600" : "text-white"}`} />
+        {/* <Lamp size={24} className={`${isOpen ? "text-blue-600" : "text-white"}`} /> */}
+        <img src="../public/imgs/logos/NAIA_logo_curto.png" alt="" className="w-16 h-16"/>
       </motion.button>
 
       {/* Janela AI */}
@@ -55,7 +56,7 @@ Respond briefly to help with story creation.`;
             className="mt-4 w-80 bg-white bg-opacity-90 backdrop-blur-md rounded-2xl shadow-2xl p-4 flex flex-col gap-3 border border-blue-100"
           >
             <h4 className="font-bold text-blue-700 text-lg flex items-center gap-2">
-              💡 Ask the AI
+              💡 Ask the NAIA
             </h4>
 
             {/* Resposta da IA com scroll */}
@@ -79,7 +80,7 @@ Respond briefly to help with story creation.`;
               disabled={isLoading}
               className="bg-blue-600 text-white rounded-lg py-2 font-bold hover:bg-blue-700 transition"
             >
-              {isLoading ? "Thinking..." : "Ask AI"}
+              {isLoading ? "Thinking..." : "Ask NAIA"}
             </button>
           </motion.div>
         )}

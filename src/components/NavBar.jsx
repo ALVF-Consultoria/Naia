@@ -14,15 +14,15 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="w-full bg-white border-b border-blue-100 fixed top-0 left-0 z-50 shadow-sm">
+    <nav className="w-full bg-white border-b border-blue-100 fixed top-0 left-0 z-50 shadow-sm ">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        {/* LOGO */}
         <Link 
           to="/" 
-          className="text-xl font-bold text-blue-600 hover:text-blue-800 transition"
+          className=" flex text-xl font-bold text-blue-600 hover:text-blue-800 transition"
           onClick={() => setIsOpen(false)}
         >
-          NA<span className="text-blue-400">IA</span>
+          <img src="../public/imgs/logos/NAIA_logo_curto.png" alt="" className="w-12 h-12"/>
+          {/* NA<span className="text-blue-400">IA</span> */}
         </Link>
 
         {/* DESKTOP MENU */}
