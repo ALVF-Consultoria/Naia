@@ -1,6 +1,6 @@
 // src/pages/Home.jsx
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { motion } from "framer-motion";
 import Particles from "@tsparticles/react";
 
@@ -54,7 +54,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="relative min-h-screen flex flex-col bg-gradient-to-b from-white to-blue-50 overflow-hidden">
+    <div className="relative min-h-screen flex flex-col bg-gradient-to-b from-white to-blue-50 overflow-hidden mt-12">
       {/* Particles */}
       <Particles id="tsparticles-home" className="absolute inset-0 z-0" init={particlesInit} options={particlesOptions} />
 

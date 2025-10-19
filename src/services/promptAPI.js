@@ -50,7 +50,7 @@ async function createLanguageModelSession() {
         // CORREÇÃO: Usar um idioma suportado como 'en'
         const session = await LM.create({
             expectedOutputLanguage: "en",
-            temperature: 2, // (Sua escolha: aumenta a aleatoriedade/criatividade)
+            temperature: 0.8, // (Sua escolha: aumenta a aleatoriedade/criatividade)
             topK: 40, 
             monitor: (m) => {
                 m.addEventListener("downloadprogress", (e) => {
