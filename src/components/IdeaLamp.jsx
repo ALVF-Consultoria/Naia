@@ -30,19 +30,19 @@ Respond briefly to help with story creation.`;
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-      {/* Botão da lâmpada */}
+    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end ">
+      {/* Botão da logo */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
         animate={{ y: [0, -6, 0], rotate: [0, 10, -10, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
-        whileHover={{ scale: 1.2, boxShadow: "0px 0px 20px rgba(59, 130, 246, 0.6)" }}
-        className={`p-4 rounded-full shadow-lg relative z-10 ${
+        whileHover={{ scale: 1.2 }}
+        className={`cursor-pointer p-4 rounded-full relative z-10 ${
           isOpen ? "shadow-[0_0_20px_#3b82f6]" : ""
         }`}
       >
         {/* <Lamp size={24} className={`${isOpen ? "text-blue-600" : "text-white"}`} /> */}
-        <img src="../public/imgs/logos/NAIA_logo_curto.png" alt="" className="w-16 h-16"/>
+        <img src="../public/imgs/logos/NAIA_logo_curto-reduzida.png" alt="" className="w-14 h-14"/>
       </motion.button>
 
       {/* Janela AI */}
