@@ -20,7 +20,7 @@ const FlipbookPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6 block">
+    <div className="min-h-screen bg-gray-100 p-6 flex flex-col justify-center items-center">
       <h1 className="text-3xl font-bold mb-4 text-center">📖 Livro Folheável</h1>
       <div className="flex justify-center">
         <EbookViewer storyText={storyText} />
