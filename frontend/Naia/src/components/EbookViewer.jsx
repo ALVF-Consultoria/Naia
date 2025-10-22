@@ -13,7 +13,7 @@ const splitIntoPages = (text, wordsPerPage = 140) => {
 
 const EbookViewer = ({ storyText }) => {
   const [darkMode, setDarkMode] = useState(false);
-  const pages = splitIntoPages(storyText, 140);
+  const pages = splitIntoPages(storyText, 50);
 
   const pageStyle = darkMode
     ? "bg-gray-900 text-gray-100"
