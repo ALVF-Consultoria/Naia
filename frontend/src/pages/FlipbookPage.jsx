@@ -1,6 +1,6 @@
 // src/pages/FlipbookPage.jsx
 import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router";
 import EbookViewer from "../components/EbookViewer";
 
 const FlipbookPage = () => {
