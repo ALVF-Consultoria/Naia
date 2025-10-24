@@ -6,7 +6,17 @@ const steps = [
   "Definindo Cenário...",
   "Ajustando Atmosfera...",
   "Elaborando Conflitos...",
-  "Dando os Últimos Toques..."
+  "Dando os Últimos Toques...",
+  "Ops, Fiz algo de errado...",
+  "Refazendo Hitória...",
+  "Corrijindo erros...",
+  "Acho que agora ficou legal...",
+  "Continuando...",
+  "...",
+  "......",
+  ".........",
+  "............",
+  "..............."
 ];
 
 const StoryGenerationOverlay = ({ visible }) => {
