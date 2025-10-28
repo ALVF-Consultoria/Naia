@@ -2,16 +2,16 @@
 import React, { useEffect, useState } from "react";
 
 const steps = [
-  "Criando Personagem...",
-  "Definindo Cenário...",
-  "Ajustando Atmosfera...",
-  "Elaborando Conflitos...",
-  "Dando os Últimos Toques...",
-  "Ops, Fiz algo de errado...",
-  "Refazendo Hitória...",
-  "Corrijindo erros...",
-  "Acho que agora ficou legal...",
-  "Continuando...",
+  "Creating Character...",
+  "Defining Setting...",
+  "Adjusting Atmosphere...",
+  "Elaborating Conflicts...",
+  "Adding Final Touches...",
+  "Oops, I made a mistake...",
+  "Redoing Story...",
+  "Fixing errors...",
+  "I think it looks good now...",
+  "Continuing...",
   "...",
   "......",
   ".........",
@@ -36,7 +36,7 @@ const StoryGenerationOverlay = ({ visible }) => {
   return (
     <div className="fixed inset-0 bg-black/70 z-50 flex flex-col items-center justify-center text-white">
       <div className="p-8 rounded-xl shadow-lg flex flex-col items-center gap-6">
-        <h2 className="text-2xl font-bold">Gerando História</h2>
+        <h2 className="text-2xl font-bold">Generating Story</h2>
         <div className="text-lg animate-pulse">{steps[currentStep]}</div>
 
         {/* Spinner */}

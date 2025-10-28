@@ -90,12 +90,12 @@ const Home = () => {
           >
             🚀 Start Now
           </Link>
-          <button
-            onClick={() => alert("Coming soon: Explore translated stories!")}
+          <Link
+            to="/stories-page"
             className="bg-white hover:bg-blue-50 text-blue-600 font-bold py-3 px-10 rounded-full text-lg transition-all duration-300 shadow-lg border-2 border-blue-600 hover:shadow-2xl"
           >
             🔄 Translate Story
-          </button>
+          </Link>
         </motion.div>
 
         {/* Feature cards */}

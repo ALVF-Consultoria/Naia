@@ -10,8 +10,8 @@ const iconMap = { User, Zap, Globe, BookOpen, MessageSquare };
 const FormSummary = ({ data, onRestart, onGenerateStory, onBack, isSubmitting }) => {
   return (
     <div className="space-y-6">
-      <h2 className="text-3xl font-extrabold text-gray-900">🎉 Rascunho da História Concluído!</h2>
-      <p className="text-gray-600">Resumo dos elementos que você criou.</p>
+      <h2 className="text-3xl font-extrabold text-gray-900">🎉 Story Draft Completed!</h2>
+      <p className="text-gray-600">Summary of the elements you created.</p>
 
       {stepsConfig.map((step, index) => (
         <div key={index} className="bg-white p-4 rounded-xl shadow-md border-l-4 border-blue-400">
@@ -22,7 +22,7 @@ const FormSummary = ({ data, onRestart, onGenerateStory, onBack, isSubmitting })
           <ul className="list-disc ml-5 space-y-1 text-gray-700">
             {step.fields.map(field => (
               <li key={field.id}>
-                <span className="font-medium">{field.label}:</span> {String(data[field.id] || "Não preenchido")}
+                <span className="font-medium">{field.label}:</span> {String(data[field.id] || "Not filled")}
               </li>
             ))}
           </ul>
@@ -30,11 +30,11 @@ const FormSummary = ({ data, onRestart, onGenerateStory, onBack, isSubmitting })
       ))}
 
       <div className="flex flex-col sm:flex-row gap-3 mt-6">
-        <button onClick={onRestart} className="w-full py-3 bg-gray-200 text-gray-700 font-bold rounded-xl hover:bg-gray-300 transition duration-300 shadow-md">Recomeçar</button>
+        <button onClick={onRestart} className="w-full py-3 bg-gray-200 text-gray-700 font-bold rounded-xl hover:bg-gray-300 transition duration-300 shadow-md">Restart</button>
         <button onClick={onGenerateStory} disabled={isSubmitting} className={`w-full py-3 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition duration-300 shadow-md ${isSubmitting ? 'opacity-60 cursor-not-allowed' : ''}`}>
-          {isSubmitting ? 'Gerando História...' : 'Gerar História'}
+          {isSubmitting ? 'Generating Story...' : 'Generate Story'}
         </button>
-        <button onClick={onBack} className="w-full py-3 bg-indigo-50 text-indigo-700 font-bold rounded-xl hover:bg-indigo-100 transition duration-300 shadow-md">Voltar</button>
+        <button onClick={onBack} className="w-full py-3 bg-indigo-50 text-indigo-700 font-bold rounded-xl hover:bg-indigo-100 transition duration-300 shadow-md">Back</button>
       </div>
     </div>
   );
@@ -81,14 +81,14 @@ const CurrentStep = ({ step, formData, handleChange, currentStep, totalSteps, ha
           disabled={currentStep === 1}
           className={`px-6 py-2 rounded-lg font-semibold transition duration-300 ${currentStep === 1 ? 'bg-gray-200 text-gray-400 cursor-not-allowed' : 'bg-indigo-50 text-indigo-700 hover:bg-indigo-100'}`}
         >
-          Voltar
+          Back
         </button>
         <button
           onClick={handleNext}
           disabled={!isStepValid(currentStep)}
           className={`flex items-center px-6 py-2 rounded-lg font-bold transition duration-200 ${isStepValid(currentStep) ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-md' : 'bg-gray-300 text-gray-500 cursor-not-allowed'}`}
         >
-          {currentStep < totalSteps ? 'Próxima Etapa' : 'Finalizar Rascunho'}
+          {currentStep < totalSteps ? 'Next Step' : 'Finish Draft'}
           <ArrowRight className="w-4 h-4 ml-2" />
         </button>
       </div>
@@ -154,9 +154,9 @@ const StoryForm = ({ onSubmit }) => {
         <header className="mb-8 text-center">
           <h1 className="text-4xl font-extrabold text-gray-900 flex items-center justify-center">
             <Sparkles className="w-6 h-6 mr-3 text-yellow-500" />
-            Crie sua História em 5 Passos
+            Create Your Story in 5 Steps
           </h1>
-          <p className="text-md text-gray-500 mt-2">Desenvolva os pilares da sua narrativa, etapa por etapa.</p>
+          <p className="text-md text-gray-500 mt-2">Develop the pillars of your narrative, step by step.</p>
         </header>
 
         <TopWizardProgress steps={stepsConfig} current={currentStep} />

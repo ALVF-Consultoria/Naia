@@ -1,28 +1,18 @@
-// src/context/StoryContext.jsx
 import React, { createContext, useContext, useState } from "react";
-
-/**
- * StoryContext fornece:
- * - formData: dados do formulário (etapas)
- * - updateFormData(partial): merge parcial dos dados do form
- * - storyData: texto completo gerado (string)
- * - setFinalStory(text): define a história final
- * - isGenerating / setIsGenerating: estado de geração (overlay)
- */
 
 const StoryContext = createContext(null);
 
 export const StoryProvider = ({ children }) => {
   const [formData, setFormData] = useState({});
-  const [storyData, setStoryData] = useState(""); // string com a história
+  const [storyData, setStoryData] = useState(""); // texto da história
+  const [storyTitle, setStoryTitle] = useState("Minha História"); // título
   const [isGenerating, setIsGenerating] = useState(false);
 
-  const updateFormData = (partial) => {
-    setFormData((prev) => ({ ...prev, ...partial }));
-  };
+  const updateFormData = (partial) => setFormData((prev) => ({ ...prev, ...partial }));
 
-  const setFinalStory = (text) => {
-    setStoryData(text);
+  const setFinalStory = (storyText, title = "Minha História") => {
+    setStoryData(storyText);
+    setStoryTitle(title);
   };
 
   return (
@@ -31,6 +21,7 @@ export const StoryProvider = ({ children }) => {
         formData,
         updateFormData,
         storyData,
+        storyTitle,
         setFinalStory,
         isGenerating,
         setIsGenerating,

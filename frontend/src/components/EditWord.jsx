@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { promptAPI } from "../services/promptAPI"; // sua função de chamada da IA
+import { promptAPI } from "../services/promptAPI"; // your AI call function
 
 const EditWord = ({ storyText, setStoryText }) => {
   const [findWord, setFindWord] = useState("");
@@ -11,20 +11,20 @@ const EditWord = ({ storyText, setStoryText }) => {
     setLoading(true);
 
     try {
-      // Prompt ajustado para retornar APENAS o texto atualizado
+      // Adjusted prompt to return ONLY the updated text
       const prompt = `
-Substitua todas as ocorrências da palavra "${findWord}" por "${replaceWord}" no texto abaixo. 
-Retorne apenas o texto atualizado, sem comentários, explicações ou repetições do prompt.
-Texto original: """${storyText}"""
+Replace all occurrences of the word "${findWord}" with "${replaceWord}" in the text below.
+Return only the updated text, without comments, explanations, or repetitions of the prompt.
+Original text: """${storyText}"""
 `;
 
-      const updatedStory = await promptAPI(prompt); // chama sua IA
+      const updatedStory = await promptAPI(prompt); // calls your AI
       setStoryText(updatedStory);
       setFindWord("");
       setReplaceWord("");
     } catch (err) {
       console.error(err);
-      alert("Erro ao atualizar a história.");
+      alert("Error updating the story.");
     } finally {
       setLoading(false);
     }
@@ -33,24 +33,24 @@ Texto original: """${storyText}"""
   return (
     <div className="flex flex-col gap-3 p-4 bg-gray-50 rounded-lg shadow-md w-full max-w-2xl">
       <label>
-        Onde tem:
+        Find word:
         <input
           type="text"
           value={findWord}
           onChange={(e) => setFindWord(e.target.value)}
           className="border p-2 rounded w-full mt-1"
-          placeholder="Palavra a ser substituída"
+          placeholder="Word to be replaced"
         />
       </label>
 
       <label>
-        Troque por:
+        Replace with:
         <input
           type="text"
           value={replaceWord}
           onChange={(e) => setReplaceWord(e.target.value)}
           className="border p-2 rounded w-full mt-1"
-          placeholder="Nova palavra"
+          placeholder="New word"
         />
       </label>
 
@@ -59,7 +59,7 @@ Texto original: """${storyText}"""
         disabled={loading}
         className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2"
       >
-        {loading ? "Atualizando..." : "Aplicar"}
+        {loading ? "Updating..." : "Apply"}
       </button>
     </div>
   );

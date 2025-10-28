@@ -1,35 +1,42 @@
 export function buildStoryPrompt(formData) {
   return `
-Crie uma história dividida em 5 capítulos com base nos seguintes elementos:
+Create a story divided into 5 chapters based on the following elements:
 
-1 Protagonista:
-- Nome: ${formData.protagonistaNome}
-- Descrição: ${formData.protagonistaDescricao}
-- Objetivo: ${formData.protagonistaObjetivo}
+1. Protagonist:
+- Name: ${formData.protagonistName}
+- Description: ${formData.protagonistDescription}
+- Goal: ${formData.protagonistGoal}
 
-2 Antagonista e Conflito:
-- Antagonista: ${formData.antagonistaNatureza}
-- Ponto de partida do conflito: ${formData.conflitoPontoPartida}
+2. Antagonist & Conflict:
+- Antagonist: ${formData.antagonistNature}
+- Conflict starting point: ${formData.conflictStartingPoint}
 
-3 Cenário e Atmosfera:
-- Local: ${formData.cenarioLocal}
-- Época: ${formData.cenarioEpoca}
-- Tom/Atmosfera: ${formData.cenarioTom}
+3. Setting & Atmosphere:
+- Location: ${formData.settingLocation}
+- Time period: ${formData.settingTime}
+- Tone/Atmosphere: ${formData.settingTone}
 
-4 Enredo e Clímax:
-- Maior obstáculo: ${formData.enredoObstaculo}
-- Clímax: ${formData.enredoClimax}
+4. Plot & Climax:
+- Greatest obstacle: ${formData.plotObstacle}
+- Climax: ${formData.plotClimax}
 
-5 Tema e Mensagem:
-- Mensagem central/tema: ${formData.temaMensagem}
+5. Theme & Message:
+- Central message/theme: ${formData.themeMessage}
 
-Regras:
-- Divida a história em 5 capítulos claros.
-- Cada capítulo deve ter entre 100 e 200 palavras.
-- Mantenha o tom e atmosfera especificados.
-- Faça com que o protagonista evolua ao longo da narrativa.
-- Comece cada capítulo com "Capítulo X:".
+Rules:
+- Divide the story into 5 clear chapters.
+- Each chapter should be between 100 and 200 words.
+- Maintain the specified tone and atmosphere.
+- Show the protagonist’s development throughout the narrative.
+- Start each chapter with "Chapter X:".
 
-Retorne apenas a história formatada em texto.
+🔹 Return the response **only** in the following valid JSON format:
+
+{
+  "title": "A creative title based on the story",
+  "story": "Here goes the complete story in 5 chapters"
+}
+
+Do not include explanations or code, only the JSON.
 `;
 }

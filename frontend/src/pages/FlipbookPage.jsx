@@ -1,16 +1,13 @@
-// src/pages/FlipbookPage.jsx
 import React from "react";
-import { useLocation, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import EbookViewer from "../components/EbookViewer";
+import { useStory } from "../context/StoryContext";
 
 const FlipbookPage = () => {
-  const location = useLocation();
   const navigate = useNavigate();
+  const { storyData, storyTitle } = useStory();
 
-  // Recebe a história pela rota
-  const storyText = location.state?.storyText || null;
-
-  if (!storyText) {
+  if (!storyData) {
     return (
       <div className="p-6">
         <p>Nenhuma história encontrada.</p>
@@ -20,10 +17,9 @@ const FlipbookPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6 flex flex-col justify-center items-center">
-      <h1 className="text-3xl font-bold mb-4 text-center">📖 Livro Folheável</h1>
+    <div className="min-h-screen bg-gray-100 p-6 flex flex-col justify-center items-center mt-6">
       <div className="flex justify-center">
-        <EbookViewer storyText={storyText} />
+        <EbookViewer storyText={storyData} storyTitle={storyTitle} />
       </div>
       <div className="text-center">
         <button

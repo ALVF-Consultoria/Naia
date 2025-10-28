@@ -1,6 +1,5 @@
-// src/components/Navbar.jsx
 import { Link, useLocation } from "react-router-dom";
-import { Globe, Menu, X } from "lucide-react";
+import { Globe, Menu, X, BookAIcon } from "lucide-react";
 import { useState } from "react";
 
 const Navbar = () => {
@@ -10,41 +9,37 @@ const Navbar = () => {
   const links = [
     { to: "/", label: "Home" },
     { to: "/create-history", label: "Create Story" },
-    { to: "/translate-story", label: "Translate Story", icon: <Globe size={16} /> },
+    { to: "/stories-page", label: "My Stories", icon: <BookAIcon size={16} /> },
+    { to: "/stories-page", label: "Translate Story", icon: <Globe size={16} /> }, // mesma rota
   ];
 
+  const linkClasses = (to) =>
+    `flex items-center gap-1 px-3 py-2 rounded-md text-gray-700 hover:text-blue-700 transition font-medium ${
+      location.pathname === to ? "text-blue-700" : ""
+    }`; // apenas cor do texto, sem bg
+
   return (
-    <nav className="w-full bg-white border-b border-blue-100 fixed top-0 left-0 z-50 shadow-sm ">
-      <div className="container mx-auto px-6  flex justify-between items-center">
-        <Link 
-          to="/" 
-          className=" flex text-xl font-bold text-blue-600 hover:text-blue-800 transition"
+    <nav className="w-full bg-white border-b border-gray-200 fixed top-0 left-0 z-50 shadow-sm">
+      <div className=" flex justify-between items-center h-16 px-6">
+        {/* LOGO */}
+        <Link
+          to="/"
+          className="flex items-center text-xl font-bold text-blue-600 hover:text-blue-800 transition"
           onClick={() => setIsOpen(false)}
         >
-          <img src="../public/imgs/logos/NAIA_logo_curto.png" alt="" className="w-12 h-12"/>
-          {/* NA<span className="text-blue-400">IA</span> */}
+          <img
+            src="../public/imgs/logos/NAIA_logo_curto.png"
+            alt="NAIA Logo"
+            className="w-12 h-12"
+          />
         </Link>
 
         {/* DESKTOP MENU */}
-        <div className="hidden md:flex space-x-6">
+        <div className="hidden md:flex items-center space-x-4">
           {links.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className={`relative flex items-center gap-1 text-gray-700 hover:text-blue-700 transition font-medium ${
-                location.pathname === link.to ? "text-blue-700" : ""
-              }`}
-            >
+            <Link key={link.label} to={link.to} className={linkClasses(link.to)}>
               {link.icon && <span className="text-blue-500">{link.icon}</span>}
               {link.label}
-              {/* Animated underline */}
-              <span
-                className={`absolute left-0 -bottom-1 h-[2px] w-full transform scale-x-0 transition-transform origin-left ${
-                  location.pathname === link.to
-                    ? "bg-blue-600 scale-x-100"
-                    : "bg-blue-600 group-hover:scale-x-100"
-                }`}
-              />
             </Link>
           ))}
         </div>
@@ -58,17 +53,15 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* MOBILE MENU DROPDOWN */}
+      {/* MOBILE MENU */}
       {isOpen && (
-        <div className="md:hidden bg-white border-t border-blue-100 shadow-md flex flex-col px-6 py-4 space-y-4">
+        <div className="md:hidden bg-white border-t border-gray-200 shadow-md flex flex-col px-4 py-3 space-y-2">
           {links.map((link) => (
             <Link
-              key={link.to}
+              key={link.label}
               to={link.to}
               onClick={() => setIsOpen(false)}
-              className={`flex items-center gap-2 text-gray-700 hover:text-blue-700 transition font-medium ${
-                location.pathname === link.to ? "text-blue-700" : ""
-              }`}
+              className={linkClasses(link.to)}
             >
               {link.icon && <span className="text-blue-500">{link.icon}</span>}
               {link.label}
