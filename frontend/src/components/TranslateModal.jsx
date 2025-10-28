@@ -10,13 +10,13 @@ const TranslateModal = ({ isOpen, onClose, onTranslate, isTranslating, progress 
   if (!isOpen) return null;
 
   const languages = [
-    { code: "pt", name: "Portuguese (Brazil)" },
-    { code: "en", name: "English" },
     { code: "es", name: "Spanish" },
     { code: "fr", name: "French" },
     { code: "de", name: "German" },
     { code: "it", name: "Italian" },
     { code: "ja", name: "Japanese" },
+    { code: "en", name: "English" },
+    { code: "pt", name: "Portuguese (Brazil)" },
   ];
 
   return (
