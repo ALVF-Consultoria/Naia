@@ -1,11 +1,11 @@
 import React from "react";
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+import NavBar from "../components/NavBar";
 
 export default function MainTemplate({children}){
   return (
     <div>
-        <Navbar/>
+        <NavBar/>
             {children}
         <Footer/>
     </div>
