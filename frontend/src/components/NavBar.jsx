@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import logo from '../assets/logos/NAIA_logo_curto.png';
 
-const Navbar = () => {
+const NavBar = () => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
