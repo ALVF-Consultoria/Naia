@@ -4,6 +4,8 @@ import { Lamp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { promptAPI } from "../services/promptAPI";
 
+import logo from '../assets/logos/NAIA_logo_curto.png';
+
 const IdeaLamp = ({ currentStepData }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [question, setQuestion] = useState("");
@@ -42,7 +44,7 @@ Respond briefly to help with story creation.`;
         }`}
       >
         {/* <Lamp size={24} className={`${isOpen ? "text-blue-600" : "text-white"}`} /> */}
-        <img src="../public/imgs/logos/NAIA_logo_curto-reduzida.png" alt="" className="w-14 h-14"/>
+        <img src={logo} alt="" className="w-14 h-14"/>
       </motion.button>
 
       {/* Janela AI */}

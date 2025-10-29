@@ -2,6 +2,8 @@ import { Link, useLocation } from "react-router-dom";
 import { Globe, Menu, X, BookAIcon } from "lucide-react";
 import { useState } from "react";
 
+import logo from '../assets/logos/NAIA_logo_curto.png';
+
 const Navbar = () => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +30,7 @@ const Navbar = () => {
           onClick={() => setIsOpen(false)}
         >
           <img
-            src="../public/imgs/logos/NAIA_logo_curto.png"
+            src={logo}
             alt="NAIA Logo"
             className="w-12 h-12"
           />
