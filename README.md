@@ -102,6 +102,18 @@ We learned:
 
 ---
 
+chrome://flags
+
+#prompt-api-for-gemini-nano
+
+#optimization-guide-on-device-model
+
+#translation-api
+
+#language-detection-api
+
+---
+
 ## 🧩 Installation
 
 ```bash
@@ -226,6 +238,18 @@ Aprendemos:
 ## 🏁 Palavras-chave
 
 `IA` · `Gemini Nano` · `Chrome Hackathon` · `Inteligência Local` · `Storytelling` · `React` · `Tailwind` · `Ferramentas Criativas`
+
+---
+
+chrome://flags
+
+#prompt-api-for-gemini-nano
+
+#optimization-guide-on-device-model
+
+#translation-api
+
+#language-detection-api
 
 ---
 
