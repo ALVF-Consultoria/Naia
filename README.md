@@ -102,15 +102,13 @@ We learned:
 
 ---
 
-chrome://flags
+## chrome://flags
 
 #prompt-api-for-gemini-nano
-
 #optimization-guide-on-device-model
-
-#translation-api
-
 #language-detection-api
+#translation-api
+#translation-api-streaming-by-sentence
 
 ---
 
@@ -241,15 +239,13 @@ Aprendemos:
 
 ---
 
-chrome://flags
+## chrome://flags
 
 #prompt-api-for-gemini-nano
-
 #optimization-guide-on-device-model
-
-#translation-api
-
 #language-detection-api
+#translation-api
+#translation-api-streaming-by-sentence
 
 ---
 
